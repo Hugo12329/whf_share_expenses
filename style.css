@@ -1,0 +1,258 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #34495e;
+    border-bottom: 2px solid #eceff1;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #fdfdfd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+/* Participant Section */
+.participant-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.participant-row input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.participant-row button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 0.9em;
+}
+
+.participant-row button:hover {
+    background-color: #c0392b;
+}
+
+#add-participant {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+#add-participant:hover {
+    background-color: #27ae60;
+}
+
+/* Expenses Section */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #eee;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #555;
+}
+
+table tr:nth-child(even) {
+    background-color: #fbfbfb;
+}
+
+#expenses-table input[type="text"],
+#expenses-table input[type="number"],
+#expenses-table select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+#expenses-table input[type="number"] {
+    text-align: right;
+}
+
+.involved-participants-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.involved-participants-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9em;
+}
+
+.remove-expense {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+}
+
+.remove-expense:hover {
+    background-color: #c0392b;
+}
+
+#add-expense {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+#add-expense:hover {
+    background-color: #2980b9;
+}
+
+/* Results Section */
+#calculate-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#calculate-button:hover {
+    background-color: #e67e22;
+}
+
+#net-amounts div, #settlement-suggestions p {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-left: 5px solid #3498db;
+    margin-bottom: 8px;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #eee;
+        margin-bottom: 10px;
+        display: block;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #fdfdfd;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    table td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+        margin-bottom: 5px;
+    }
+
+    table td:before {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* Label the data */
+    table td:nth-of-type(1):before { content: "描述"; }
+    table td:nth-of-type(2):before { content: "金額"; }
+    table td:nth-of-type(3):before { content: "付款人"; }
+    table td:nth-of-type(4):before { content: "參與的人"; }
+    table td:nth-of-type(5):before { content: "操作"; }
+
+    .participant-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .participant-row button, #add-participant, #add-expense, #calculate-button {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+}
